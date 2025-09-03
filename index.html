@@ -3,46 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Site</title>
+  <title>Apeldoorn Boardgames Group</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: linear-gradient(120deg, #89f7fe, #66a6ff);
-      color: #333;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
     }
-    h1 {
-      font-size: 2.5rem;
+    header {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1602751587198-9d4ef44df3c0?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 60, 0, 0.55); /* green overlay */
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
       margin-bottom: 0.5rem;
     }
-    p {
+    header p {
       font-size: 1.2rem;
-      max-width: 600px;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    section:nth-of-type(odd) {
+      background: #fff;
+    }
+    section:nth-of-type(even) {
+      background: #fef6ef; /* light orange tint */
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2f6d31; /* earthy green */
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
     a.button {
       display: inline-block;
-      margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
-      background: #333;
+      background: #f57c00; /* warm orange */
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.3s;
     }
     a.button:hover {
-      background: #555;
+      background: #d45d00;
+    }
+    footer {
+      background: #2f6d31; /* deep green */
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>👋 Welcome to boardgames Apeldoorn! 👋</h1>
-  <p>More info to follow.</p>
+  <!-- Hero Section -->
+  <header>
+    <h1>🎲 Apeldoorn Boardgames Group</h1>
+    <p>Monthly meetups for boardgame lovers in Apeldoorn</p>
+  </header>
+
+  <!-- About Section -->
+  <section>
+    <h2>About Us</h2>
+    <p>
+      We’re a friendly community of boardgame enthusiasts who gather once a month
+      to play, discover, and enjoy games together. From classics to modern strategy games,
+      there’s something for everyone!
+    </p>
+    <p>
+      We also welcome young players, ages 6 and up, so families are encouraged to join and
+      share the fun. Kids can join from 15:00-17:00. If you bring your kid and their friends, please
+      make sure to come with enough adults to help them out.
+    </p>
+  </section>
+
+  <!-- When & Where Section -->
+  <section>
+    <h2>📅 When & Where</h2>
+    <p>
+      We meet every <strong>last Saturday of the month</strong> from 15:00 till 20:00. (TO BE CONFIRMED)
+    </p>
+    <p>
+      TO BE CONFIRMED
+    </p>
+    <p>
+      You can check out some of the games we own
+      <a href="https://boardgamegeek.com/collection/user/">here</a>.
+      Feel free to bring your own games you'd like to play.
+    </p>
+    <p>
+      We don’t pre-arrange groups. Instead, we encourage people to mix, connect, and discover new gaming buddies.
+      It’s a great chance to play with people you might not already know!
+
+      Our group is open to both Dutch and English speakers — you are free to choose the language you prefer when playing.
+    </p>
+  </section>
+
+  <!-- Join Section -->
+  <section>
+    <h2>🧑‍🤝‍🧑 Join Us</h2>
+    <p>
+      Bring your favorite game or just bring yourself—we always have plenty of games ready!
+      Newcomers are very welcome.
+    </p>
+    <p>
+      Do you want to help organizing? Let us know, extra hosts and new ideas can bring more magic.
+    </p>
+    <a href="mailto:boardgamesapeldoorn@gmail.com" class="button">Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Apeldoorn Boardgames · Made with 🎲 and fun</p>
+  </footer>
 </body>
 </html>

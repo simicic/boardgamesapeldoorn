@@ -13,7 +13,6 @@
     }
     header {
       position: relative;
-      background: url('https://images.unsplash.com/photo-1602751587198-9d4ef44df3c0?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 6rem 2rem;
@@ -36,7 +35,7 @@
       font-size: 1.2rem;
     }
     section {
-      padding: 3rem 2rem;
+      padding: 1rem 2rem;
       max-width: 900px;
       margin: auto;
       text-align: center;
@@ -75,6 +74,18 @@
       padding: 1.5rem;
       font-size: 0.9rem;
     }
+
+    #myTablist {
+      display: flex;
+      justify-content: center; /* centers tabs horizontally */
+      gap: 1rem;               /* optional: space between tabs */
+      margin: 1rem 0;          /* optional: spacing above/below */
+    }
+
+    #myTablist [role="tab"] {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -84,63 +95,203 @@
     <p>Monthly meetups for boardgame lovers in Apeldoorn</p>
   </header>
 
-  <!-- About Section -->
-  <section>
-    <h2>About Us</h2>
-    <p>
-      We’re a friendly community of boardgames enthusiasts who gather once a month
-      to play, discover, and enjoy games together. From classics to modern strategy games,
-      there’s something for everyone!
-    </p>
-    <p>
-      We also welcome young players, ages 6 and up, so families are encouraged to join and
-      share the fun. Kids can join from 15:00-17:00. If you bring your kids and their friends, please
-      make sure to come with enough adults to help them out.
-    </p>
+  <div role="tablist" aria-label="Demo tabs" id="myTablist">
+    <button role="tab" aria-selected="true" aria-controls="panel-1" id="nl" data-tab="1">🇳🇱</button>
+    <button role="tab" aria-selected="false" aria-controls="panel-2" id="en" data-tab="2">🇬🇧</button>
+  </div>
+
+  <section id="panel-1" role="tabpanel" aria-labelledby="nl">
+    <section>
+      <h2>Over ons</h2>
+      <p>
+        Wij zijn een gezellige community van bordspel-liefhebbers die één keer per maand
+        samenkomt om spelle2 te spelen, ontdekken en ervan te genieten. Van klassiekers tot moderne strategische spellen,
+        er is voor ieder wat wils!
+      </p>
+      <p>
+        We verwelkomen ook jonge spelers vanaf 6 jaar, dus gezinnen zijn van harte uitgenodigd om mee te doen en
+        samen plezier te maken. Kinderen kunnen meespelen van 15:00-17:00. Als je je kinderen en hun vriendjes en vriendinnetjes meeneemt,
+        zorg er dan voor dat er voldoende volwassenen aanwezig zijn om te helpen.
+      </p>
+    </section>
+
+    <section>
+      <h2>Wanneer & Waar 👥</h2>
+      <p>
+        We komen elke <strong>laatste zaterdag van de maand</strong> samen van 15:00 tot 20:00.
+      </p>
+      <p>
+        Volgende bijeenkomst: <strong>27 september 2025</strong>
+      </p>
+      <p>
+        <a target="_blank" href="https://maps.app.goo.gl/WQcveLMdMfAYdbN29">De Groene Hoven</a>, Koninginnelaan 280, 7315 EE Apeldoorn
+      </p>
+      <p>
+        Je kunt een aantal van de spellen die we hebben
+        <a target="_blank" href="https://boardgamegeek.com/collection/user/pazinjanka">hier</a> bekijken.
+        Neem gerust je eigen spellen mee die je wilt spelen.
+      </p>
+      <a target="_blank" href="https://app.tickettailor.com/events/boardgamesapeldoorn/1857955" class="button">Aanmelden</a>
+      <p>
+        We maken vooraf geen vaste groepen. In plaats daarvan moedigen we mensen aan om te mengen, contact te maken en nieuwe spelvrienden te ontdekken.
+        Het is een mooie kans om te spelen met mensen die je misschien nog niet kent!
+
+        Onze groep is open voor zowel Nederlandstalige als Engelstalige spelers — je bent vrij om de taal te kiezen die je het prettigst vindt tijdens het spelen.
+      </p>
+    </section>
+
+    <section>
+      <h2>🧑‍🤝‍🧑 Doe mee</h2>
+      <p>
+        Neem je favoriete spel mee of kom gewoon zoals je bent — we hebben altijd genoeg spellen klaarstaan!
+        Nieuwkomers zijn van harte welkom.
+      </p>
+      <p>
+        Wil je helpen met organiseren? Laat het ons weten, extra hosts en nieuwe ideeën kunnen nog meer magie brengen.
+      </p>
+      <a target="_blank" href="mailto:boardgamesapeldoorn@gmail.com" class="button">Neem contact op</a>
+    </section>
   </section>
 
-  <!-- When & Where Section -->
-  <section>
-    <h2>When & Where 👥</h2>
-    <p>
-      We meet every <strong>last Saturday of the month</strong> from 15:00 till 20:00.
-    </p>
-    <p>
-      Upcoming event: <strong>27 September 2025</strong>
-    </p>
-    <p>
-      <a href="https://maps.app.goo.gl/WQcveLMdMfAYdbN29">De Groene Hoven</a>, Koninginnelaan 280, 7315 EE Apeldoorn
-    </p>
-    <p>
-      You can check out some of the games we own
-      <a href="https://boardgamegeek.com/collection/user/pazinjanka">here</a>.
-      Feel free to bring your own games you'd like to play.
-    </p>
-    <a href="https://app.tickettailor.com/events/boardgamesapeldoorn/1857955" class="button">Register</a>
-    <p>
-      We don’t pre-arrange groups. Instead, we encourage people to mix, connect, and discover new gaming buddies.
-      It’s a great chance to play with people you might not already know!
+  <section id="panel-2" role="tabpanel" aria-labelledby="en" hidden>
+    <section>
+      <h2>About Us</h2>
+      <p>
+        We’re a friendly community of boardgames enthusiasts who gather once a month
+        to play, discover, and enjoy games together. From classics to modern strategy games,
+        there’s something for everyone!
+      </p>
+      <p>
+        We also welcome young players, ages 6 and up, so families are encouraged to join and
+        share the fun. Kids can join from 15:00-17:00. If you bring your kids and their friends, please
+        make sure to come with enough adults to help them out.
+      </p>
+    </section>
 
-      Our group is open to both Dutch and English speakers — you are free to choose the language you prefer when playing.
-    </p>
-  </section>
+    <section>
+      <h2>When & Where 👥</h2>
+      <p>
+        We meet every <strong>last Saturday of the month</strong> from 15:00 till 20:00.
+      </p>
+      <p>
+        Upcoming event: <strong>27 September 2025</strong>
+      </p>
+      <p>
+        <a target="_blank" href="https://maps.app.goo.gl/WQcveLMdMfAYdbN29">De Groene Hoven</a>, Koninginnelaan 280, 7315 EE Apeldoorn
+      </p>
+      <p>
+        You can check out some of the games we own
+        <a target="_blank" href="https://boardgamegeek.com/collection/user/pazinjanka">here</a>.
+        Feel free to bring your own games you'd like to play.
+      </p>
+      <a target="_blank" href="https://app.tickettailor.com/events/boardgamesapeldoorn/1857955" class="button">Register</a>
+      <p>
+        We don’t pre-arrange groups. Instead, we encourage people to mix, connect, and discover new gaming buddies.
+        It’s a great chance to play with people you might not already know!
 
-  <!-- Join Section -->
-  <section>
-    <h2>🧑‍🤝‍🧑 Join Us</h2>
-    <p>
-      Bring your favorite game or just bring yourself—we always have plenty of games ready!
-      Newcomers are very welcome.
-    </p>
-    <p>
-      Do you want to help organizing? Let us know, extra hosts and new ideas can bring more magic.
-    </p>
-    <a href="mailto:boardgamesapeldoorn@gmail.com" class="button">Get in Touch</a>
+        Our group is open to both Dutch and English speakers — you are free to choose the language you prefer when playing.
+      </p>
+    </section>
+
+    <section>
+      <h2>🧑‍🤝‍🧑 Join Us</h2>
+      <p>
+        Bring your favorite game or just bring yourself—we always have plenty of games ready!
+        Newcomers are very welcome.
+      </p>
+      <p>
+        Do you want to help organizing? Let us know, extra hosts and new ideas can bring more magic.
+      </p>
+      <a href="mailto:boardgamesapeldoorn@gmail.com" class="button">Get in Touch</a>
+    </section>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Apeldoorn Boardgames · Made with 🎲 and fun</p>
   </footer>
+
+  <script>
+    (function () {
+      const tablist = document.getElementById('myTablist');
+      const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+      const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+      function activateTab(tab, setFocus = true, replaceHash = false) {
+        // Deactivate all
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected', 'false');
+          t.tabIndex = -1;
+        });
+        panels.forEach(p => p.hidden = true);
+
+        // Activate chosen
+        tab.setAttribute('aria-selected', 'true');
+        tab.tabIndex = 0;
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (panel) panel.hidden = false;
+
+        if (setFocus) tab.focus();
+
+        // Update URL hash for deep-linking (optional: replace or push)
+        const hash = '#' + tab.id;
+        if (replaceHash) history.replaceState(null, '', hash);
+        else history.pushState(null, '', hash);
+      }
+
+      function initialActive() {
+        const hash = location.hash && location.hash.substring(1);
+        let candidate = null;
+        if (hash) candidate = document.getElementById(hash);
+        if (!candidate) candidate = tabs[0];
+        activateTab(candidate, false, true);
+      }
+
+      // Click handling
+      tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          activateTab(tab, true, false);
+        });
+
+        // Keyboard support
+        tab.addEventListener('keydown', (e) => {
+          const idx = tabs.indexOf(tab);
+          let newIdx = null;
+          switch (e.key) {
+            case 'ArrowRight':
+            case 'Right':
+              newIdx = (idx + 1) % tabs.length; break;
+            case 'ArrowLeft':
+            case 'Left':
+              newIdx = (idx - 1 + tabs.length) % tabs.length; break;
+            case 'Home':
+              newIdx = 0; break;
+            case 'End':
+              newIdx = tabs.length - 1; break;
+            case 'Enter':
+            case ' ':
+              activateTab(tab, true, false); e.preventDefault(); return;
+            default:
+              return; // do nothing for other keys
+          }
+          e.preventDefault();
+          tabs[newIdx].focus();
+        });
+      });
+
+      window.addEventListener('popstate', () => {
+        // When user navigates back/forward, respect the hash if present
+        const hash = location.hash && location.hash.substring(1);
+        const target = hash ? document.getElementById(hash) : null;
+        if (target && target.getAttribute('role') === 'tab') activateTab(target, true, true);
+      });
+
+      document.addEventListener('DOMContentLoaded', initialActive);
+
+      // If the HTML is parsed after script, also run immediately (defensive)
+      if (document.readyState === 'interactive' || document.readyState === 'complete') initialActive();
+
+    })();
+  </script>
 </body>
 </html>
